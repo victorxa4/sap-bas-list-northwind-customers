@@ -18,7 +18,7 @@
 |**Add Eslint configuration**<br>False|
 |**Object collection**<br>Customers|
 |**Object collection key**<br>CustomerID|
-|**Object ID**<br>CustomerID|
+|**Object ID**<br>CustomerName|
 |**entityType**<br>CustomerDemographics|
 |**entitySet**<br>CustomerDemographics|
 |**Line item collection key**<br>CustomerTypeID|
