@@ -2,7 +2,9 @@
     controllerName="northwindtest2.controller.Detail"
     xmlns="sap.m"
     xmlns:semantic="sap.f.semantic"
-    xmlns:mvc="sap.ui.core.mvc">
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    >
 
     <semantic:SemanticPage
         id="detailPage"
@@ -10,16 +12,47 @@
         busyIndicatorDelay="{detailView>/delay}">
         <semantic:titleHeading>
             <Title
+                id="T1"
                 text="{CompanyName}"
                 level="H2"/>
         </semantic:titleHeading>
         <semantic:headerContent>
-            <ObjectAttribute title="Phone" text="{Phone}" />
-            <ObjectAttribute title="Contact Name ({ContactTitle})" text="{ContactName}" />
+            <ObjectAttribute id="OA1" title="Phone" text="{Phone}" />
+            <ObjectAttribute id="OA2" title="Contact Name ({ContactTitle})" text="{ContactName}" />
         </semantic:headerContent>
         <!--content-->
         <semantic:content>
+            <l:VerticalLayout
+                id="VL1"
+                class="sapUiContentPadding"
+                width="100%">
+                <l:content>
+                    <List
+                        id="lineItemsList"
+                        binding="{/Customers}"
+                        headerText="Customer Info" >
+                        <DisplayListItem
+                            id="DLI1"
+                            label="Country"
+                            value="{Country}" />
+                        <DisplayListItem
+                            id="DLI2"
+                            label="City"
+                            value="{City}" />
+                        <DisplayListItem
+                            id="DLI3"
+                            label="Address"
+                            value="{Address}" />
+                        <DisplayListItem
+                            id="DLI4"
+                            label="Postal Code"
+                            value="{PostalCode}" />
+                        
+                    </List>
+                </l:content>
+            </l:VerticalLayout>
 
+            <!--
             <Table
                 id="lineItemsList"
                 width="auto"
@@ -38,34 +71,26 @@
                 </headerToolbar>
                 <columns>
                     <Column>
-                        <Text text="{i18n>detailLineItemTableIDColumn}"/>
+                        <Text text="Teste"/>
                     </Column>
                     <Column
                         minScreenWidth="Tablet"
                         demandPopin="true"
                         hAlign="End">
-                        <Text text="{i18n>detailLineItemTableUnitNumberColumn}"/>
+                        <Text text="Teste2"/>
                     </Column>
                 </columns>
                 <items>
                     <ColumnListItem>
                         <cells>
-                            <ObjectIdentifier
-                                title="{}"
-                                text="{CustomerTypeID}"/>
-                            <ObjectNumber />
+                            <Text text="Teste"/>
                         </cells>
                     </ColumnListItem>
                 </items>
             </Table>
+            -->
         </semantic:content>
         <!--Semantic ShareMenu Buttons-->
-        <semantic:sendEmailAction>
-            <semantic:SendEmailAction
-                id="shareEmail"
-                press=".onSendEmailPress"/>
-        </semantic:sendEmailAction>
-
         <semantic:closeAction>
             <semantic:CloseAction
                     id="closeColumn"

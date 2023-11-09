@@ -37,7 +37,7 @@
                 selectionChange=".onSelectionChange">
 
                 <headerToolbar>
-                    <OverflowToolbar>
+                    <OverflowToolbar id="OT1">
                         <SearchField
                             id="searchField"
                             showRefreshButton="true"
@@ -46,13 +46,14 @@
                             width="auto">
                             <layoutData>
                                 <OverflowToolbarLayoutData
+                                    id="OTLD1"
                                     minWidth="150px"
                                     maxWidth="240px"
                                     shrinkable="true"
                                     priority="NeverOverflow"/>
                             </layoutData>
                         </SearchField>
-                        <ToolbarSpacer/>
+                        <ToolbarSpacer id="TS1"/>
                         <Button
                             id="sortButton"
                             press=".onOpenViewSettings"
@@ -63,6 +64,7 @@
                 </headerToolbar>
                 <items>
                     <ObjectListItem
+                        id="OLI1"
                         type="Navigation"
                         press=".onSelectionChange"
                         title="{CompanyName}"
